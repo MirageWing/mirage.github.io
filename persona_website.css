@@ -2,6 +2,10 @@ body {
   background-color: lightblue;
 }
 
+#topnav{
+  color: aquamarine;
+}
+
 h1 {
   color: white;
   text-align: center;
