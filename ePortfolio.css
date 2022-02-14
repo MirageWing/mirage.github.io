@@ -447,6 +447,7 @@ body, html {
 
 .moduleCoursework1 p {
 	color: white;
+	display:inline-block;
 	margin-top: 5px;
 	font-size:15pt;
 	padding-left: 5%;
@@ -515,6 +516,7 @@ body, html {
 
 .moduleCoursework2 p {
 	color: white;
+	display:inline-block;
 	font-size:15pt;
 	padding-left: 5%;
 	float:left;
@@ -525,6 +527,7 @@ body, html {
 }
 
 #ITC2 { 
+	display:inline-block;
 	float:left; 
 	display: block; 
 	font-size:20pt; 
@@ -532,6 +535,7 @@ body, html {
 }
 
 .wrapperVideo2{ /*video*/
+	float: right; 
 	width: 420px;
 	height:360px;
 	display: inline-block; 
@@ -612,6 +616,7 @@ body, html {
 }
 #slideshowHeader {
 	padding-bottom:5%;
+	display: inline-block;
     float: right;
     margin-right: 0%;
     margin-bottom: 0%;
@@ -621,6 +626,7 @@ body, html {
     text-shadow: 0px 3px 5px;
 }
 #recordHeader {
+	display: inline-block;
     float: left;
     margin-right: 0%;
     margin-bottom: 0%;
