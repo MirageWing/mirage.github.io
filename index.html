@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<meta charset="UTF-8"/>
+	<meta name='viewport' content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="ePortfolio.css">
+	<title> My ePortfolio </title>
+	
+	<script>
+	$(document).ready(function(){
+		$("#wrapperAboutMeText1").click(function(){
+			$("#wrapperAboutMe1Extendeed").fadeIn();
+			$("#AboutMe1ExtendedHeader").fadeIn(); 
+			$("#AboutMe1ExtendedPara").fadeIn(); 
+		});
+	});
+	
+	$(document).ready(function(){
+		$("#collapseTips").click(function(){
+			$("#wrapperAboutMe1Extendeed").fadeOut();
+			$("#AboutMe1ExtendedHeader").fadeOut(); 
+			$("#AboutMe1ExtendedPara").fadeOut(); 
+		});
+	});
+	</script>
+	</head>
+	
+	<body>
+		<div class="topnav">
+			<a class="active" href="index.html">About Me</a>
+			<a href="SecondPage.html">Artwork</a>
+			<a href="ThirdPage.html">Projects</a>
+			<a href="ForthPage.html">Ask A Question</a>
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	</a>
+	</div>
+	
+	<div class="hero-image">
+		<div class="hero-text">
+		<h1 id='heroTextName'>I am Jia Yuen</h1>
+		<p>And I'm an Information and Technology student</p>
+		<button><a href= "#About1">Know more about me</a></button>
+		</div>
+	</div>
+	
+	<div class="AboutMe1">
+	<img id = "AboutMe1Pic" src = "images/Portfolio2.jpg">
+		<div id="wrapperAboutMeText1">
+		<h2 id = "About1"> Introduction </h2>
+		<p> I was a student from a small village before entering high-school. 
+			In high-school, I invested most of my time in subjects that are related to Information and Technology such as programming and multimedia modules
+			as they are my personal interest. I chose to enroll into BSc(Hons) Multimedia Computing as IT field holds a special place in my
+			heart since I was young and I am willing to take on the challenges throughout the course and expose myself to the knowledge that are waiting for me.
+			<span style="color:#ffffff; text-decoration:underline;"> (My Strength!)</span></p>
+		</div>
+		
+		<div class="AboutMe1Extended">
+			<div id="wrapperAboutMe1Extendeed">
+			<h2 id="AboutMe1ExtendedHeader"> My Strenght</h2>
+			<img src="images/painting.png" style="margin:5pt;width:10%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<p>CREATING</p>
+			<img src="images/idea.png" style="margin:5pt;width:10%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<p>PROBLEM SOLVING</p>
+			<img src="images/team.png" style="margin:5pt;width:10%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<p>TEAM BUILDING</p>
+			<p id="collapseTips">Click to collapse</p>
+			</div>
+		</div>
+	</div>	
+		
+	<div class="AboutMe2">
+		<h2 id='About2'> Qualifications to date </h2>
+		<table id="qualificationTable" style="width:85%">
+		<style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+		}
+		th, td {
+			padding: 5px;
+			text-align: left;
+		}
+		</style>
+		<tr>
+			<th>Specific</th>
+			<th>Number of Credits</th>
+		</tr>
+		<tr>
+			<td>SPM</td>
+			<td>1A 4Bs 3Cs</td>
+		</tr>
+		<tr>
+			<td>SUEC</td>
+			<td>1A 3Bs 1C</td>
+		</tr>
+		<tr>
+			<td>Foundation</td>
+			<td>CGPA 3.58</td>
+		</tr>
+		</table>
+	</div>	
+	
+	<!-- Slideshow with links -->
+	<div class="slideshow-container">
+		<div class="mySlides fade">
+		<div class="numbertext">1 / 6</div>
+		<a href="SecondPage.html" >
+		<img src="images/A2(wide530px).jpg" style="width:100%">
+		</a>
+		<div class="text">Fundamental of Multimedia - Bitmapped Image</div>
+	</div>
+
+	<div class="mySlides fade">
+		<div class="numbertext">2 / 6</div>
+		<a href="SecondPage.html" >
+		<img src="images/donut(530px).jpg" style="width:100%">
+		</a>
+		<div class="text">Fundamental of Multimedia - 3D modelling</div>
+	</div>
+	
+	<div class="mySlides fade">
+		<div class="numbertext">3 / 6</div>
+		<a href="SecondPage.html" >
+		<img src="images/Hotair ballon(wide530px).jpg" style="width:100%">
+		</a>
+		<div class="text">Fundamental of Multimedia - Vector Image</div>
+	</div>
+	
+	<div class="mySlides fade">
+		<div class="numbertext" style = "color:black">4 / 6</div>
+		<a href="SecondPage.html" >
+		<img src="images/Inu(wide530).gif" style="width:100%">
+		</a>
+		<div class="text">Fundamental of Multimedia - GIF</div>
+	</div>
+	
+	<div class="mySlides fade">
+		<div class="numbertext">5 / 6</div>
+		<a href="SecondPage.html" >
+		<img src="images/Summer1(wide530px).jpg" style="width:100%">
+		</a>
+		<div class="text">Fundamental of Multimedia - Bitmapped Image</div>
+	</div>
+	
+	<div class="mySlides fade">
+		<div class="numbertext" style = "color:black">6 / 6</div>
+		<a href="SecondPage.html" >
+		<img src="images/Coursework2.jpg" style="width:100%">
+		</a>
+		<div class="text">Tamadun Islam dan Tamadun Asia</div>
+	</div>
+	
+
+	<!-- The dots/circles -->
+	<div style="text-align:center">
+	<span class="dot" onclick="currentSlide(1)"></span>
+	<span class="dot" onclick="currentSlide(2)"></span>
+	<span class="dot" onclick="currentSlide(3)"></span>
+	<span class="dot" onclick="currentSlide(4)"></span>
+	<span class="dot" onclick="currentSlide(5)"></span>
+	<span class="dot" onclick="currentSlide(6)"></span>
+	</div>
+	</div>
+	<!-- Javascript for slideshow-->
+	<script>
+	var slideIndex = 0;
+	showSlides();
+
+	function showSlides() {
+	var i;
+	var slides = document.getElementsByClassName("mySlides");
+	var dots = document.getElementsByClassName("dot");
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";  
+	}
+	slideIndex++;
+	if (slideIndex > slides.length) {slideIndex = 1}    
+	for (i = 0; i < dots.length; i++) {
+		dots[i].className = dots[i].className.replace(" active", "");
+	}
+	slides[slideIndex-1].style.display = "block";  
+	dots[slideIndex-1].className += " active";
+	setTimeout(showSlides, 3500); // Change image every 2 seconds
+	}
+	</script>
+	</body>
+	
+	<footer>
+	<p>Posted on: March 2020</p>
+	</footer>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<meta charset="UTF-8"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="ePortfolio.css">
+	<title> Modules & Feedback </title>
+	
+	<script> 
+	$(document).ready(function(){
+	  $(".moduleSection1").click(function(){
+		$(".moduleSection1").animate({
+		opacity: '1',
+		height: 'auto',
+		width: '100%',
+		});	
+	  });
+	});
+	
+	$(document).ready(function(){
+	$(".moduleSection1").click(function(){
+    $("#moduleSectionImages").fadeIn();
+	$("#overview1").fadeIn();
+	$("#personalReflection1").fadeIn();});
+	
+	});
+	
+	$(document).ready(function(){
+	  $(".moduleSection2").click(function(){
+		$(".moduleSection2").animate({
+		opacity: '1',
+		height: 'auto',
+		width: '100%',
+		});	
+	  });
+	});
+	
+	$(document).ready(function(){
+	$(".moduleSection2").click(function(){
+    $("#moduleSectionImages2").fadeIn();
+	$("#overview2").fadeIn();
+	$("#personalReflection2").fadeIn();});
+	});
+	</script>	
+	</head>
+	
+	<body>
+	<div class="topnav">
+	<a href="index.html">About Me</a>
+	<a class="active" href="SecondPage.html">Artwork</a>
+	<a href="ThirdPage.html">Projects</a>
+	<a href="ForthPage.html">Ask A Question</a>
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	</a>
+	</div>
+	
+	<div class = "secondPageHeader"> 
+		<h1>Artwork</h1>	
+		<p>DIGITAL artwork created by me with Blender, Adobe Illustrator, and Adove Photoshop.</p>
+	</div>
+	
+	<!-- First Section -->
+	<div id="container1">
+		<div class="moduleSection1">
+			<h1>Blender</h1>
+			<h3>3D modelling software for beginner.</h3>
+		</div>
+	</div>
+	
+	<div id = "moduleSectionImages">
+		<div class= "wrapperModuleImages1">
+			<div class="images1" style="display:inline-block";>
+			<img src="images/blender-1.jpg" style="margin:5pt;width:40%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<img src="images/blender-2.jpg" style="margin:5pt;width:40%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<img src="images/blender-3.png" style="margin:5pt;width:40%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<img src="images/blender-4.jpg" style="margin:5pt;width:40%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			</div>
+		</div>
+	</div>
+
+	
+	<!-- Second Section -->
+	<div class="moduleSection2">
+		<h1>Adobe Photoshop</h1>
+		<h3>Software to create bitmap image</h3>
+	</div>
+	
+	<div id = "moduleSectionImages2"> 
+		<div class= "wrapperModuleImages2">
+			<div class="images2">
+			<img src="images/A2(cropped).jpg" title="videoediting" style="margin:5pt; width:40%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<img src="images/Gate1.jpg" title="videoediting" style="margin:5pt; width:40%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<img src="images/Photoshop-3.jpg" title="videoediting" style="margin:5pt; width:40%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			<img src="images/Inu.gif" title="videoediting" style="margin:5pt; width:40%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+			</div>
+		</div>
+	</div>
+		
+	</body>
+	
+</html>
+	

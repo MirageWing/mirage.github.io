@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="ePortfolio.css"> 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+	<title> Module Coursework </title>
+	<script>
+	function saySomething1(){
+        var utt=new SpeechSynthesisUtterance(document.querySelectorAll("article")[0].innerText);
+        utt.lang="en-UK";
+        speechSynthesis.speak(utt);
+        }
+	
+	function saySomething2(){
+        var utt=new SpeechSynthesisUtterance(document.querySelectorAll("article")[1].innerText);
+        utt.lang="en-UK";
+        speechSynthesis.speak(utt);
+        }
+		
+	function saySomething3(){
+        var utt=new SpeechSynthesisUtterance(document.querySelectorAll("article")[2].innerText);
+        utt.lang="en-UK";
+        speechSynthesis.speak(utt);
+        }
+		
+	function saySomething4(){
+        var utt=new SpeechSynthesisUtterance(document.querySelectorAll("article")[3].innerText);
+        utt.lang="en-UK";
+        speechSynthesis.speak(utt);
+        }
+	
+	</script>
+	</head>
+	
+	<body>
+		<div class="topnav">
+			<a href="index.html">About Me</a>
+			<a href="SecondPage.html">Artwork</a>
+			<a class="active" href="ThirdPage.html">Projects</a>
+			<a href="ForthPage.html">Ask A Question</a>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+		<div class = "secondPageHeader"> 
+			<h1>Projects (2017-2020)</h1>	
+			<p>PROJECTS relate to multimedia are included in the following section. See what I can do and how I did it.</p>
+		</div>
+			
+	<!-- Section1 -->
+	<div class="moduleCoursework1">
+	<h2> Website Development [INSTAGRAHAM.INC] <button id="button1" onclick = "saySomething1()"> Text-to-Speech </button> </h2> 
+	<article id="article1">
+	<p> INSTAGRAHAM.INC is a fictional social media company. Student is requested to design a social media website for user to upload pictures (.png, .jpg, .gif...) to the website and allows others to view and collect the images while the owners can edit detail of the images.</p>
+	</article>
+	
+	<div class='wrapperVideo1'>
+		<video id = "coursework1" controls>
+		<source src="videos/coursework1.mp4" type="video/mp4">
+		Your browser does not support the video tag.
+	</video>
+</div>
+		
+	<h2 id = 'ITC1'> Development <button id="button2" onclick = "saySomething2()"> Text-to-Speech </button> </h2>
+	<article id="article2">
+	<p> This project is developed and written with PHP in NETBEAN IDE. Database is constructed with MySQL.</p>
+	</article>
+	
+			
+	</div>
+	
+	<!-- Section2 -->
+	<div class="moduleCoursework2">
+	<h2> Video Editing [Strategise Your Future] <button id="button3" onclick = "saySomething3()"> Text-to-Speech </button>  </h2> 
+	<article>
+	<p> [Strategise Your Future] is an educational video providing tips and advice for teenagers in pathing their future careers. The video is presented in a narrative method where a main character is regreting on his decision when deciding a career. The story took an unexpected turn when he time travelled back to his highschool age and took tips and advice in an educational video.
+	</p>
+	</article>
+	
+	<div class='wrapperVideo2'>
+			<video id = "coursework2" controls>
+			<source src="videos/coursework2.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+	</div>	
+		
+	<h2 id = 'ITC2'> Development <button id="button4" onclick = "saySomething4()"> Text-to-Speech </button> </h2>
+	<article>
+	<p> SOFTWARE used to edit the video includes Adobe After Effect and Adobe Premiere Pro. </p>
+	</article>
+		
+		
+
+	</div>
+	</body>
+</html>

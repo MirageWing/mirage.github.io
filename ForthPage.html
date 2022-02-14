@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="ePortfolio.css">
+	
+	<title> Ask A Question </title>
+	</head>
+	
+	<body>
+	<div class="topnav">
+	<a href="index.html">About Me</a>
+	<a href="SecondPage.html">Artwork</a>
+	<a href="ThirdPage.html">Projects</a>
+	<a class="active" href="ForthPage.html">Ask A Question</a>
+	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		<i class="fa fa-bars"></i>
+	</a>
+	</div>
+	
+	<div class = "fourthPageHeader"> 
+		<p>Ask A Question</p>	
+	</div>
+	
+	<!-- Video capture -->
+	<div id="wrapperForthPage">
+	<div class="videoCapturing">
+	<section style="width:75%;">      
+    <div class id="wrapperRecorder">
+		<h2 id='recordHeader'> Record your question </h2>
+    <div  style="margin-top:5%">
+        <video autoplay id="vid1" poster="https://image.freepik.com/free-icon/video-camera-symbol_318-40225.png"></video>
+    </div>
+	
+	<div class="recorder">
+        <button type=button id="strtVid" onclick='getStream()'>Start Rec</button>
+        <button type=button id="stpVid" onclick='stopRecorder()'>Stop Rec</button>
+    </div> 
+	</div>
+	</div>
+		
+	<script>
+
+	// script for recording Video and real time Uploading to server and local machine
+
+	function getUserMedia(options, successCallback, failureCallback) {
+        var api = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+          navigator.mozGetUserMedia || navigator.msGetUserMedia;
+        if (api) {
+            return api.bind(navigator)(options, successCallback, failureCallback);
+        }
+        alert('User Media API not supported.');
+    }
+
+    var theStream;
+    var theRecorder;
+    var recordedChunks = [];
+
+    var mediaSource = new MediaSource();
+    var sourceBuffer;
+
+
+	function getStream() {
+
+        recordedChunks = [];
+
+        var vid2 = document.getElementById('vid2');
+    //  vid2.src = window.URL.createObjectURL(mediaSource);
+
+     
+
+
+        mediaSource.addEventListener('sourceopen', function (e) {
+            sourceBuffer = mediaSource.addSourceBuffer('video/webm; codecs="opus,vp8"');
+        }, false);
+       // vid2.play();
+
+
+        var constraints = {
+            
+
+           // video: { width: 1280, height: 720 }, audio: true
+           // video: { width: 384, height: 288 }, audio: true
+            video: true, audio: true
+        };
+
+        getUserMedia(constraints, function (stream) {
+            var mediaControl = document.getElementById('vid1');
+            if (navigator.mozGetUserMedia) {
+                mediaControl.mozSrcObject = stream;
+            } else {
+                mediaControl.srcObject = stream;
+               // mediaControl.src = (window.URL || window.webkitURL).createObjectURL(stream);
+            }
+
+            theStream = stream;
+            try {
+                recorder = new MediaRecorder(stream);
+            } catch (e) {
+                console.error('Exception while creating MediaRecorder: ' + e);
+                return;
+            }
+            theRecorder = recorder;
+            console.log('MediaRecorder created');
+            recorder.ondataavailable = recorderOnDataAvailable;
+            recorder.start(100);
+        }, function (err) {
+            alert('Error: ' + err);
+        });
+    }	
+
+	function recorderOnDataAvailable(event) {
+        if (event.data.size == 0) return;
+        recordedChunks.push(event.data);
+
+        var reader = new FileReader();
+        reader.addEventListener("loadend", function () {
+            var arr = new Uint8Array(reader.result);
+            sourceBuffer.appendBuffer(arr);
+        });
+        reader.readAsArrayBuffer(event.data);
+    }
+	function download(fileName) {
+	console.log('Saving data');
+        theRecorder.stop();
+        theStream.getTracks()[0].stop();
+
+        var blob = new Blob(recordedChunks, { type: "video/webm" });
+        var url = (window.URL || window.webkitURL).createObjectURL(blob);
+        var a = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+        a.href = url;
+        a.download = fileName+".webm";
+        a.click();
+
+	// setTimeout() here is needed for Firefox.
+        setTimeout(function () {
+            (window.URL || window.webkitURL).revokeObjectURL(url);
+        }, 100);
+	}
+	
+	function stopRecorder() {
+	download("myVideo");
+	}
+		</script>
+	
+	<!-- Slideshow -->
+	<div id='wrapperSlideshow'>
+	<h2 id='slideshowHeader'>Preview of previous work</h2>
+	<div class="slideshow-container2">
+		<div class="mySlides fade">
+		<div class="numbertext">1 / 6</div>
+		<img src="images/A2(530px).jpg">
+		<div class="text2">Fundamental of Multimedia - Bitmapped Image</div>
+	</div>
+
+	<div class="mySlides fade">
+		<div class="numbertext">2 / 6</div>
+		<img src="images/Griffin(530px).jpg">
+		<div class="text2">Fundamental of Multimedia - Bitmapped Image</div>
+	</div>
+	
+	<div class="mySlides fade">
+		<div class="numbertext">3 / 6</div>
+		<img src="images/Hotair ballon.jpg">
+		<div class="text2">Fundamental of Multimedia - Vector Image</div>
+	</div>
+	
+	<div class="mySlides fade">
+		<div class="numbertext" style = "color:black">4 / 6</div>
+		<img src="images/Inu.gif" style='max-width:530px'>
+		<div class="text2">Fundamental of Multimedia - GIF</div>
+	</div>
+	
+	<div class="mySlides fade">
+		<div class="numbertext">5 / 6</div>
+		<img src="images/Summer1.jpg" style='max-width:530px'>
+		<div class="text2">Fundamental of Multimedia - Bitmapped Image</div>
+	</div>
+	
+	<div class="mySlides fade">
+		<div class="numbertext" style = "color:black">6 / 6</div>
+		<img src="images/Coursework2(530px).jpg" style='max-width:95%'>
+		<div class="text2">Tamadun Islam dan Tamadun Asia</div>
+	</div>
+	
+	<!-- Dot function -->
+	<a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides2(1)">&#10095;</a>
+
+	<!-- The dots/circles -->
+	<div style="text-align:center">
+	<span class="dot" onclick="currentSlide(1)"></span>
+	<span class="dot" onclick="currentSlide(2)"></span>
+	<span class="dot" onclick="currentSlide(3)"></span>
+	<span class="dot" onclick="currentSlide(4)"></span>
+	<span class="dot" onclick="currentSlide(5)"></span>
+	<span class="dot" onclick="currentSlide(6)"></span>
+	</div>
+	</div>
+	<!-- Javascript for slideshow-->
+	<script>
+	var slideIndex2 = 1;
+	showSlides2(slideIndex2);
+
+	function plusSlides2(n) {
+  showSlides2(slideIndex2 += n);
+}
+
+	function currentSlide(n) {
+	showSlides2(slideIndex2 = n);
+	}
+
+	function showSlides2(n) {
+	var i;
+	var slides = document.getElementsByClassName("mySlides");
+	var dots = document.getElementsByClassName("dot");
+	if (n > slides.length) {slideIndex2 = 1}    
+	  if (n < 1) {slideIndex2 = slides.length}
+	for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+	}
+	for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+	}
+	slides[slideIndex2-1].style.display = "block";  
+	dots[slideIndex2-1].className += " active";
+}
+	</script>
+	</div>
+	</body>
+</html>
